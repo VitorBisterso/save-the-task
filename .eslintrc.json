@@ -30,6 +30,7 @@
         "no-unused-expressions": [
             "error", { "allowTernary": true }
         ],
+        "no-param-reassign": ["error", { "props": false }],
         "import/extensions": [
             "error",
             "ignorePackages",

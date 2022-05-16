@@ -1,0 +1,7 @@
+const tasksActionsTypes = {
+    FETCH_ALL_TASKS_REQUEST: 'FETCH_ALL_TASKS_REQUEST',
+    FETCH_ALL_TASKS_FAILED: 'FETCH_ALL_TASKS_FAILED',
+    FETCH_ALL_TASKS_SUCCESS: 'FETCH_ALL_TASKS_SUCCESS',
+};
+
+export default tasksActionsTypes;

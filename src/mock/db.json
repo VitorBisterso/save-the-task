@@ -1,0 +1,46 @@
+{
+    "tarefas": [
+        {
+            "id": 1,
+            "titulo": "Ir ao mercado",
+            "descricao": "Preciso comprar batatas, cenouras, refrigerante, sabão, tudo isso no mercadinho da esquina cujo dono é o Seu Bento. Ele mora aqui há 30 anos e eu acho que agora a descrição tá longa o suficiente pra precisar de reticências",
+            "prioridade": "5",
+            "categoria": {
+                "id": 1,
+                "nome": "Casa",
+                "cor": "#00ff00"
+            },
+            "completada": false,
+            "dono": "vitor.bisterso",
+            "participantes": ["vitor.bisterso"]
+        },
+        {
+            "id": 2,
+            "titulo": "Dar banho no cachorro",
+            "descricao": "Tá muito sujo!!!",
+            "prioridade": "2",
+            "categoria": {
+                "id": 2,
+                "nome": "Pet",
+                "cor": "#0000ff"
+            },
+            "completada": true,
+            "dono": "vitor.bisterso",
+            "participantes": ["vitor.bisterso"]
+        },
+        {
+            "id": 3,
+            "titulo": "Estudar algoritmos",
+            "descricao": "Prova pela frente :/",
+            "prioridade": "10",
+            "categoria": {
+                "id": 3,
+                "nome": "Faculdade",
+                "cor": "#ff0000"
+            },
+            "completada": false,
+            "dono": "vitor.bisterso",
+            "participantes": ["vitor.bisterso"]
+        }
+    ]
+}
