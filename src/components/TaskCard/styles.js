@@ -8,8 +8,8 @@ export const Container = styled.div`
     border: 1px solid var(--COLOR-BLACK);
     border-radius: 10px;
     padding: 5px 10px;
-    width: 300px;
-    height: 200px;
+    width: var(--CARD-WIDTH);
+    height: var(--CARD-HEIGHT);
 `;
 
 export const Header = styled.div`
@@ -55,9 +55,14 @@ export const Footer = styled.div`
 export const Icon = styled.img`
     cursor: pointer;
     width: 18px;
+    transition: all 0.2s linear;
 
     &:last-child {
         margin-left: 5px;
+    }
+
+    &:hover {
+        width: 24px;
     }
 `;
 
@@ -66,13 +71,22 @@ export const Button = styled.button`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid var(--COLOR-BLACK);
+    border: 1px solid var(--COLOR-PINK);
     border-radius: 5px;
     padding: 5px;
     background-color: transparent;
     cursor: pointer;
+    background-color: var(--COLOR-WHITE);
+    color: var(--COLOR-BLACK);
+    transition: all 0.2s linear;
+
+    &:hover {
+        background-color: var(--COLOR-PINK);
+        color: var(--COLOR-WHITE);
+    }
 
     img {
+        width: 18px;
         margin-left: 5px;
     }
 `;

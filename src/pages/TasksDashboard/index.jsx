@@ -6,6 +6,7 @@ import TasksApi from '../../redux/api/tasks';
 import TaskCard from '../../components/TaskCard';
 
 import { Container } from './styles';
+import AddCardButton from '../../components/AddCardButton';
 
 function TasksDashboard() {
     const dispatch = useDispatch();
@@ -32,7 +33,12 @@ function TasksDashboard() {
             ))
         );
 
-    return <Container>{renderTasksList()}</Container>;
+    return (
+        <Container>
+            {renderTasksList()}
+            <AddCardButton onClick={() => undefined} />
+        </Container>
+    );
 }
 
 export default TasksDashboard;

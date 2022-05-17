@@ -25,12 +25,12 @@ function TaskCard({ titulo, descricao, prioridade, categoria, completada }) {
         completada ? (
             <Button>
                 Desmarcar
-                <Icon src={checkIcon} />
+                <img alt="check" src={checkIcon} />
             </Button>
         ) : (
             <Button>
                 Completar
-                <Icon src={uncheckIcon} />
+                <img alt="uncheck" src={uncheckIcon} />
             </Button>
         );
 
