@@ -18,9 +18,6 @@ export const Header = styled.div`
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     border-bottom: 1px solid var(--COLOR-BLACK);
 `;
 

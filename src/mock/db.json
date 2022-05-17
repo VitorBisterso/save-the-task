@@ -2,7 +2,7 @@
     "tarefas": [
         {
             "id": 1,
-            "titulo": "Ir ao mercado asdbasjdbakjs djshbd jahsbd",
+            "titulo": "Ir ao mercado da esquina comprar muitas coisas",
             "descricao": "Preciso comprar batatas, cenouras, refrigerante, sabão, tudo isso no mercadinho da esquina cujo dono é o Seu Bento. Ele mora aqui há 30 anos e eu acho que agora a descrição tá longa o suficiente pra precisar de reticências",
             "prioridade": "5",
             "categoria": {
@@ -12,7 +12,7 @@
             },
             "completada": false,
             "dono": "vitor.bisterso",
-            "participantes": ["vitor.bisterso"]
+            "participantes": []
         },
         {
             "id": 2,
@@ -26,7 +26,7 @@
             },
             "completada": true,
             "dono": "vitor.bisterso",
-            "participantes": ["vitor.bisterso"]
+            "participantes": ["abel.ferreira"]
         },
         {
             "id": 3,
@@ -40,7 +40,54 @@
             },
             "completada": false,
             "dono": "vitor.bisterso",
-            "participantes": ["vitor.bisterso"]
+            "participantes": ["abel.ferreira", "rogerio.ceni"]
+        }
+    ],
+    "categorias": [
+        {
+            "id": 1,
+            "nome": "Casa",
+            "cor": "#00ff00"
+        },
+        {
+            "id": 2,
+            "nome": "Pet",
+            "cor": "#0000ff"
+        },
+        {
+            "id": 3,
+            "nome": "Faculdade",
+            "cor": "#ff0000"
+        },
+        {
+            "id": 4,
+            "nome": "Outros",
+            "cor": "#ff00ff"
+        },
+        {
+            "id": 5,
+            "nome": "Escola",
+            "cor": "#ffff00"
+        },
+        {
+            "id": 6,
+            "nome": "Amigos",
+            "cor": "#000000"
+        },
+        {
+            "id": 7,
+            "nome": "Internas",
+            "cor": "#fae0ae"
+        },
+        {
+            "id": 8,
+            "nome": "Externas",
+            "cor": "#ffae00"
+        },
+        {
+            "id": 9,
+            "nome": "Mais outra com nome gigante aqui",
+            "cor": "#ae0000"
         }
     ]
 }

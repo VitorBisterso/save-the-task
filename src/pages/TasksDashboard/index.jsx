@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import TasksApi from '../../redux/api/tasks';
 
 import TaskCard from '../../components/TaskCard';
+import AddCardButton from '../../components/AddCardButton';
 
 import { Container } from './styles';
-import AddCardButton from '../../components/AddCardButton';
 
 function TasksDashboard() {
     const dispatch = useDispatch();
@@ -18,7 +18,7 @@ function TasksDashboard() {
 
     const renderTasksList = () =>
         isLoading ? (
-            <p>loading...</p>
+            <p>Carregando...</p>
         ) : (
             tasks &&
             tasks.map(task => (

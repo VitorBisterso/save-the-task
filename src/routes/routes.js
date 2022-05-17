@@ -1,4 +1,5 @@
 import TasksDashboard from '../pages/TasksDashboard';
+import CategoriesList from '../pages/CategoriesList';
 import NoRouteFound from '../pages/NoRouteFound';
 
 const routes = [
@@ -7,6 +8,11 @@ const routes = [
         Component: TasksDashboard,
         path: '/',
         isExact: true,
+    },
+    {
+        name: 'categoriesList',
+        Component: CategoriesList,
+        path: '/categorias',
     },
     {
         name: 'noRouteFound',

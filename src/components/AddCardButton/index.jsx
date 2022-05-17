@@ -20,14 +20,14 @@ function AddCardButton({ onClick, width, height, iconSize }) {
 
 AddCardButton.propTypes = {
     onClick: PropTypes.func.isRequired,
-    width: PropTypes.string,
-    height: PropTypes.string,
+    width: PropTypes.number,
+    height: PropTypes.number,
     iconSize: PropTypes.number,
 };
 
 AddCardButton.defaultProps = {
-    width: '300px',
-    height: '200px',
+    width: 300,
+    height: 200,
     iconSize: 48,
 };
 
