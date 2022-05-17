@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import TasksApi from '../../redux/api/tasks';
 
+import TaskCard from '../../components/TaskCard';
+
 import { Container } from './styles';
 
 function TasksDashboard() {
@@ -19,15 +21,14 @@ function TasksDashboard() {
         ) : (
             tasks &&
             tasks.map(task => (
-                <div key={task.id}>
-                    <p>{task.titulo}</p>
-                    <p>{task.descricao}</p>
-                    <p>{task.prioridade}</p>
-                    <p>{task.categoria.nome}</p>
-                    <p>{task.categoria.cor}</p>
-                    <p>{task.completada}</p>
-                    <p>{task.dono}</p>
-                </div>
+                <TaskCard
+                    key={task.id}
+                    titulo={task.titulo}
+                    descricao={task.descricao}
+                    prioridade={task.prioridade}
+                    categoria={task.categoria}
+                    completada={task.completada}
+                />
             ))
         );
 

@@ -7,9 +7,13 @@ export const Container = styled.div`
     grid-row-gap: 3rem;
     justify-items: center;
 
-    div {
-        width: 250px;
-        height: 250px;
-        background-color: var(--COLOR-PURPLE);
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 1.5rem;
+    }
+
+    @media (max-width: 500px) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 1rem;
     }
 `;
