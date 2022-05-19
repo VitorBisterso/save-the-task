@@ -9,12 +9,12 @@ export const initialState = {
 // eslint-disable-next-line default-param-last
 const tasksReducer = (state = initialState, action) => {
     switch (action.type) {
-        case tasksActionsTypes.FETCH_ALL_TASKS_REQUEST:
+        case tasksActionsTypes.TASKS_REQUEST:
             return {
                 ...state,
                 isLoading: true,
             };
-        case tasksActionsTypes.FETCH_ALL_TASKS_FAILED:
+        case tasksActionsTypes.TASKS_FAILED:
             return {
                 ...state,
                 isLoading: false,

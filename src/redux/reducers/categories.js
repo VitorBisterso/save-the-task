@@ -3,18 +3,20 @@ import categoriesActionsTypes from '../constants/categories';
 export const initialState = {
     isLoading: false,
     categories: [],
+    selectedCategory: {},
     hasError: false,
 };
 
 // eslint-disable-next-line default-param-last
 const categoriesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case categoriesActionsTypes.FETCH_ALL_CATEGORIES_REQUEST:
+        case categoriesActionsTypes.CATEGORIES_REQUEST:
             return {
                 ...state,
                 isLoading: true,
+                hasError: false,
             };
-        case categoriesActionsTypes.FETCH_ALL_CATEGORIES_FAILED:
+        case categoriesActionsTypes.CATEGORIES_FAILED:
             return {
                 ...state,
                 isLoading: false,
@@ -25,6 +27,12 @@ const categoriesReducer = (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 categories: action.payload.categories,
+            };
+        case categoriesActionsTypes.FETCH_CATEGORY_BY_ID_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                selectedCategory: action.payload.category,
             };
         default:
             return state;

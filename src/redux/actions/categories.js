@@ -1,17 +1,27 @@
 import categoriesActionsTypes from '../constants/categories';
 
 const categoriesActions = {
-    fetchAllCategoriesRequestAction: () => ({
-        type: categoriesActionsTypes.FETCH_ALL_CATEGORIES_REQUEST,
+    requestAction: () => ({
+        type: categoriesActionsTypes.CATEGORIES_REQUEST,
     }),
-    fetchAllProductsFailedAction: () => ({
-        type: categoriesActionsTypes.FETCH_ALL_CATEGORIES_FAILED,
+    failedAction: () => ({
+        type: categoriesActionsTypes.CATEGORIES_FAILED,
     }),
-    fetchAllProductsSuccessAction: categories => {
+
+    fetchAllCategoriesSuccessAction: categories => {
         return {
             type: categoriesActionsTypes.FETCH_ALL_CATEGORIES_SUCCESS,
             payload: {
                 categories,
+            },
+        };
+    },
+
+    fetchCategoryByIdSuccessAction: category => {
+        return {
+            type: categoriesActionsTypes.FETCH_CATEGORY_BY_ID_SUCCESS,
+            payload: {
+                category,
             },
         };
     },

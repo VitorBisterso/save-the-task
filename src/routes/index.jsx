@@ -7,12 +7,12 @@ function AppRoutes() {
     return (
         <Switch>
             {routes.map(route => {
-                const { name, Component, path, isExact } = route;
+                const { name, path, isExact, Component } = route;
                 return (
                     <Route
-                        exact={isExact}
-                        path={path}
                         key={name}
+                        path={path}
+                        exact={isExact}
                         element={<Component />}
                     />
                 );

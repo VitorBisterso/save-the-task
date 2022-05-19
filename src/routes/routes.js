@@ -1,5 +1,6 @@
 import TasksDashboard from '../pages/TasksDashboard';
 import CategoriesList from '../pages/CategoriesList';
+import CategoriesEditForm from '../pages/CategoriesForm/CategoriesEditForm';
 import NoRouteFound from '../pages/NoRouteFound';
 
 const routes = [
@@ -12,7 +13,12 @@ const routes = [
     {
         name: 'categoriesList',
         Component: CategoriesList,
-        path: '/categorias',
+        path: 'categorias',
+    },
+    {
+        name: 'categoriesEditForm',
+        Component: CategoriesEditForm,
+        path: 'categorias/:id',
     },
     {
         name: 'noRouteFound',

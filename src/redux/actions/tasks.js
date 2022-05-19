@@ -1,12 +1,13 @@
 import tasksActionsTypes from '../constants/tasks';
 
 const tasksActions = {
-    fetchAllTasksRequestAction: () => ({
-        type: tasksActionsTypes.FETCH_ALL_TASKS_REQUEST,
+    requestAction: () => ({
+        type: tasksActionsTypes.TASKS_REQUEST,
     }),
-    fetchAllTasksFailedAction: () => ({
-        type: tasksActionsTypes.FETCH_ALL_TASKS_FAILED,
+    failedAction: () => ({
+        type: tasksActionsTypes.TASKS_FAILED,
     }),
+
     fetchAllTasksSuccessAction: tasks => {
         return {
             type: tasksActionsTypes.FETCH_ALL_TASKS_SUCCESS,

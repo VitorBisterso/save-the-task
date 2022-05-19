@@ -3,7 +3,7 @@ import tasksActions from '../actions/tasks';
 import axios from './axios';
 
 const fetchAllTasks = () => dispatch => {
-    dispatch(tasksActions.fetchAllTasksRequestAction);
+    dispatch(tasksActions.requestAction);
 
     axios
         .get(`/tarefas`)
@@ -11,7 +11,7 @@ const fetchAllTasks = () => dispatch => {
             dispatch(tasksActions.fetchAllTasksSuccessAction(res.data));
         })
         .catch(() => {
-            dispatch(tasksActions.fetchAllTasksFailedAction());
+            dispatch(tasksActions.failedAction());
         });
 };
 

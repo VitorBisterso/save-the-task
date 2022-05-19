@@ -27,6 +27,7 @@
         "prettier/prettier": "warn",
         "import/no-unresolved": "error",
         "react/jsx-filename-extension": "off",
+        "no-unused-vars": "warn",
         "no-unused-expressions": [
             "error", { "allowTernary": true }
         ],
