@@ -25,6 +25,15 @@ const categoriesActions = {
             },
         };
     },
+
+    updateCategoryAction: category => {
+        return {
+            type: categoriesActionsTypes.UPDATE_CATEGORY_SUCCESS,
+            payload: {
+                category,
+            },
+        };
+    },
 };
 
 export default categoriesActions;

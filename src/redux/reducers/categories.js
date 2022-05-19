@@ -34,6 +34,12 @@ const categoriesReducer = (state = initialState, action) => {
                 isLoading: false,
                 selectedCategory: action.payload.category,
             };
+        case categoriesActionsTypes.UPDATE_CATEGORY_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                selectedCategory: {},
+            };
         default:
             return state;
     }

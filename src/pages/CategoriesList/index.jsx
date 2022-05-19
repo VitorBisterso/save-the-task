@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import CategoriesApi from '../../redux/api/categories';
 
@@ -9,6 +10,7 @@ import AddCardButton from '../../components/AddCardButton';
 import { Container, CategoryCard } from './styles';
 
 function CategoriesList() {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const { categories, isLoading } = useSelector(
         state => state.categoriesReducer
@@ -24,7 +26,10 @@ function CategoriesList() {
         ) : (
             categories &&
             categories.map(category => (
-                <CategoryCard key={category.id}>
+                <CategoryCard
+                    key={category.id}
+                    onClick={() => navigate(`/categorias/${category.id}`)}
+                >
                     <p>{category.nome}</p>
                     <ColoredDot color={category.cor} />
                 </CategoryCard>

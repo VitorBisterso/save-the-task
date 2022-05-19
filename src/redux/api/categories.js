@@ -32,4 +32,17 @@ const fetchCategoryById = id => dispatch => {
         });
 };
 
-export default { fetchAllCategories, fetchCategoryById };
+const updateCategory = category => dispatch => {
+    dispatch(categoriesActions.requestAction);
+
+    axios
+        .put(`/categorias/${category.id}`, category)
+        .then(res => {
+            dispatch(categoriesActions.updateCategory(res.data));
+        })
+        .catch(() => {
+            dispatch(categoriesActions.failedAction());
+        });
+};
+
+export default { fetchAllCategories, fetchCategoryById, updateCategory };
