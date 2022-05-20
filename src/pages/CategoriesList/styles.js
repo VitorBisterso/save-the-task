@@ -25,7 +25,7 @@ export const CategoryCard = styled.div`
     border: 1px solid var(--COLOR-BLACK);
     border-radius: 5px;
     padding: 0 10px;
-    width: 150px;
+    width: 175px;
     cursor: pointer;
     transition: all 0.2s linear;
 
@@ -37,8 +37,9 @@ export const CategoryCard = styled.div`
 
     p {
         text-overflow: ellipsis;
-        width: 65%;
+        width: 70%;
         white-space: nowrap;
         overflow: hidden;
+        margin-left: 5px;
     }
 `;

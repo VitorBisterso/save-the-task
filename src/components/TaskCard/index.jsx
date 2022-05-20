@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ColoredDot from '../ColoredDot';
+import Icon from '../Icon';
 
 import deleteIcon from '../../assets/img/delete.png';
 import editIcon from '../../assets/img/edit.png';
@@ -14,7 +15,6 @@ import {
     Title,
     Description,
     Footer,
-    Icon,
     Button,
 } from './styles';
 
@@ -44,8 +44,12 @@ function TaskCard({ titulo, descricao, prioridade, categoria, completada }) {
             <Description isCompleted={completada}>{descricao}</Description>
             <Footer>
                 <div>
-                    <Icon src={deleteIcon} />
-                    <Icon src={editIcon} />
+                    <Icon
+                        onClick={() => undefined}
+                        img={deleteIcon}
+                        width={18}
+                    />
+                    <Icon onClick={() => undefined} img={editIcon} width={18} />
                 </div>
                 {renderCompleteButton()}
             </Footer>

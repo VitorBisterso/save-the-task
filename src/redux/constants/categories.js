@@ -9,6 +9,8 @@ const categoriesActionsTypes = {
     UPDATE_CATEGORY_SUCCESS: 'UPDATE_CATEGORY_SUCCESS',
 
     CREATE_CATEGORY_SUCCESS: 'CREATE_CATEGORY_SUCCESS',
+
+    DELETE_CATEGORY_SUCCESS: 'DELETE_CATEGORY_SUCCESS',
 };
 
 export default categoriesActionsTypes;

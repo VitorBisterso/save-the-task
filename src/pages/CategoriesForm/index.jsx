@@ -13,8 +13,8 @@ import { Container, FormField, SelectColor } from './styles';
 function CategoriesForm({ category, onFormSubmit, pageTitle }) {
     const formik = useFormik({
         initialValues: {
-            nome: category.nome,
-            cor: category.cor,
+            nome: category.nome || '',
+            cor: category.cor || '#000000',
         },
         validationSchema: getValidationSchema(),
         onSubmit: () => {
@@ -59,11 +59,15 @@ function CategoriesForm({ category, onFormSubmit, pageTitle }) {
 
 CategoriesForm.propTypes = {
     category: PropTypes.shape({
-        nome: PropTypes.string.isRequired,
-        cor: PropTypes.string.isRequired,
-    }).isRequired,
+        nome: PropTypes.string,
+        cor: PropTypes.string,
+    }),
     onFormSubmit: PropTypes.func.isRequired,
     pageTitle: PropTypes.string.isRequired,
+};
+
+CategoriesForm.defaultProps = {
+    category: {},
 };
 
 export default CategoriesForm;

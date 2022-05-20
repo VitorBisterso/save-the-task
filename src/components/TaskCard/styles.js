@@ -47,19 +47,9 @@ export const Footer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-`;
 
-export const Icon = styled.img`
-    cursor: pointer;
-    width: 18px;
-    transition: all 0.2s linear;
-
-    &:last-child {
+    & img:last-child {
         margin-left: 5px;
-    }
-
-    &:hover {
-        width: 24px;
     }
 `;
 

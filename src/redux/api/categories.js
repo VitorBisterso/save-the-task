@@ -58,9 +58,23 @@ const createCategory = category => dispatch => {
         });
 };
 
+const deleteCategory = id => dispatch => {
+    dispatch(categoriesActions.requestAction);
+
+    axios
+        .delete(`/categorias/${id}`)
+        .then(() => {
+            dispatch(categoriesActions.deleteCategoryAction(id));
+        })
+        .catch(() => {
+            dispatch(categoriesActions.failedAction());
+        });
+};
+
 export default {
     fetchAllCategories,
     fetchCategoryById,
     updateCategory,
     createCategory,
+    deleteCategory,
 };

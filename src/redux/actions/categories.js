@@ -43,6 +43,15 @@ const categoriesActions = {
             },
         };
     },
+
+    deleteCategoryAction: id => {
+        return {
+            type: categoriesActionsTypes.DELETE_CATEGORY_SUCCESS,
+            payload: {
+                id,
+            },
+        };
+    },
 };
 
 export default categoriesActions;

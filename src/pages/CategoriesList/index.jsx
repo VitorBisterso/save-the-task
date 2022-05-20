@@ -5,8 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import CategoriesApi from '../../redux/api/categories';
 
 import ColoredDot from '../../components/ColoredDot';
-
 import AddCardButton from '../../components/AddCardButton';
+import Icon from '../../components/Icon';
+
+import deleteIcon from '../../assets/img/delete.png';
+
 import { Container, CategoryCard } from './styles';
 
 function CategoriesList() {
@@ -28,10 +31,21 @@ function CategoriesList() {
             categories.map(category => (
                 <CategoryCard
                     key={category.id}
-                    onClick={() => navigate(`/categorias/${category.id}`)}
+                    onClick={e =>
+                        e.target.tagName !== 'IMG'
+                            ? navigate(`/categorias/${category.id}`)
+                            : undefined
+                    }
                 >
-                    <p>{category.nome}</p>
                     <ColoredDot color={category.cor} />
+                    <p>{category.nome}</p>
+                    <Icon
+                        onClick={() =>
+                            dispatch(CategoriesApi.deleteCategory(category.id))
+                        }
+                        img={deleteIcon}
+                        width={24}
+                    />
                 </CategoryCard>
             ))
         );
@@ -41,7 +55,7 @@ function CategoriesList() {
             {renderCategoriesList()}
             <AddCardButton
                 onClick={() => navigate('/categorias/criar')}
-                width={150}
+                width={175}
                 height={56}
                 iconSize={24}
             />

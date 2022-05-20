@@ -40,6 +40,19 @@ const categoriesReducer = (state = initialState, action) => {
                 isLoading: false,
                 selectedCategory: {},
             };
+        case categoriesActionsTypes.DELETE_CATEGORY_SUCCESS: {
+            const { id } = action.payload;
+
+            const newCategories = state.categories.filter(
+                category => category.id !== id
+            );
+
+            return {
+                ...state,
+                isLoading: false,
+                categories: newCategories,
+            };
+        }
         default:
             return state;
     }
