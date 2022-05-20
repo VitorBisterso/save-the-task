@@ -24,7 +24,7 @@ import {
 function TaskCard({ tarefa }) {
     const dispatch = useDispatch();
 
-    const { titulo, descricao, prioridade, categoria, completada } = tarefa;
+    const { id, titulo, descricao, prioridade, categoria, completada } = tarefa;
     const { cor } = categoria;
 
     const renderCompleteButton = () => {
@@ -60,7 +60,9 @@ function TaskCard({ tarefa }) {
             <Footer>
                 <div>
                     <Icon
-                        onClick={() => undefined}
+                        onClick={() => {
+                            dispatch(TasksApi.deleteTask(id));
+                        }}
                         img={deleteIcon}
                         width={18}
                     />

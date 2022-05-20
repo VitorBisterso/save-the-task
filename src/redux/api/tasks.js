@@ -28,4 +28,17 @@ const updateTask = task => dispatch => {
         });
 };
 
-export default { fetchAllTasks, updateTask };
+const deleteTask = id => dispatch => {
+    dispatch(tasksActions.requestAction);
+
+    axios
+        .delete(`/tarefas/${id}`)
+        .then(() => {
+            dispatch(tasksActions.deleteTaskAction(id));
+        })
+        .catch(() => {
+            dispatch(tasksActions.failedAction());
+        });
+};
+
+export default { fetchAllTasks, updateTask, deleteTask };

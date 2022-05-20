@@ -19,9 +19,18 @@ const tasksActions = {
 
     updateTaskAction: task => {
         return {
-            type: tasksActionsTypes.UPDATE_TASKS_SUCCESS,
+            type: tasksActionsTypes.UPDATE_TASK_SUCCESS,
             payload: {
                 task,
+            },
+        };
+    },
+
+    deleteTaskAction: id => {
+        return {
+            type: tasksActionsTypes.DELETE_TASK_SUCCESS,
+            payload: {
+                id,
             },
         };
     },
