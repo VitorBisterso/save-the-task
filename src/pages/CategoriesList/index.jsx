@@ -40,7 +40,7 @@ function CategoriesList() {
         <Container>
             {renderCategoriesList()}
             <AddCardButton
-                onClick={() => undefined}
+                onClick={() => navigate('/categorias/criar')}
                 width={150}
                 height={56}
                 iconSize={24}

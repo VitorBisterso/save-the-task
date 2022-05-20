@@ -34,6 +34,15 @@ const categoriesActions = {
             },
         };
     },
+
+    createCategoryAction: category => {
+        return {
+            type: categoriesActionsTypes.CREATE_CATEGORY_SUCCESS,
+            payload: {
+                category,
+            },
+        };
+    },
 };
 
 export default categoriesActions;

@@ -38,11 +38,29 @@ const updateCategory = category => dispatch => {
     axios
         .put(`/categorias/${category.id}`, category)
         .then(res => {
-            dispatch(categoriesActions.updateCategory(res.data));
+            dispatch(categoriesActions.updateCategoryAction(res.data));
         })
         .catch(() => {
             dispatch(categoriesActions.failedAction());
         });
 };
 
-export default { fetchAllCategories, fetchCategoryById, updateCategory };
+const createCategory = category => dispatch => {
+    dispatch(categoriesActions.requestAction);
+
+    axios
+        .post('/categorias', category)
+        .then(res => {
+            dispatch(categoriesActions.createCategoryAction(res.data));
+        })
+        .catch(() => {
+            dispatch(categoriesActions.failedAction());
+        });
+};
+
+export default {
+    fetchAllCategories,
+    fetchCategoryById,
+    updateCategory,
+    createCategory,
+};

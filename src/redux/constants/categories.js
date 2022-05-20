@@ -7,6 +7,8 @@ const categoriesActionsTypes = {
     FETCH_CATEGORY_BY_ID_SUCCESS: 'FETCH_CATEGORY_BY_ID_SUCCESS',
 
     UPDATE_CATEGORY_SUCCESS: 'UPDATE_CATEGORY_SUCCESS',
+
+    CREATE_CATEGORY_SUCCESS: 'CREATE_CATEGORY_SUCCESS',
 };
 
 export default categoriesActionsTypes;
