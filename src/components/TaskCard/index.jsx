@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+
+import TasksApi from '../../redux/api/tasks';
 
 import ColoredDot from '../ColoredDot';
 import Icon from '../Icon';
@@ -18,21 +21,33 @@ import {
     Button,
 } from './styles';
 
-function TaskCard({ titulo, descricao, prioridade, categoria, completada }) {
+function TaskCard({ tarefa }) {
+    const dispatch = useDispatch();
+
+    const { titulo, descricao, prioridade, categoria, completada } = tarefa;
     const { cor } = categoria;
 
-    const renderCompleteButton = () =>
-        completada ? (
-            <Button>
+    const renderCompleteButton = () => {
+        const dispatchToggleEvent = () =>
+            dispatch(
+                TasksApi.updateTask({
+                    ...tarefa,
+                    completada: !completada,
+                })
+            );
+
+        return completada ? (
+            <Button onClick={() => dispatchToggleEvent()}>
                 Desmarcar
                 <img alt="check" src={checkIcon} />
             </Button>
         ) : (
-            <Button>
+            <Button onClick={() => dispatchToggleEvent()}>
                 Completar
                 <img alt="uncheck" src={uncheckIcon} />
             </Button>
         );
+    };
 
     return (
         <Container>
@@ -58,14 +73,17 @@ function TaskCard({ titulo, descricao, prioridade, categoria, completada }) {
 }
 
 TaskCard.propTypes = {
-    titulo: PropTypes.string.isRequired,
-    descricao: PropTypes.string.isRequired,
-    prioridade: PropTypes.string.isRequired,
-    categoria: PropTypes.shape({
-        nome: PropTypes.string.isRequired,
-        cor: PropTypes.string.isRequired,
+    tarefa: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        titulo: PropTypes.string.isRequired,
+        descricao: PropTypes.string.isRequired,
+        prioridade: PropTypes.string.isRequired,
+        categoria: PropTypes.shape({
+            nome: PropTypes.string.isRequired,
+            cor: PropTypes.string.isRequired,
+        }).isRequired,
+        completada: PropTypes.bool.isRequired,
     }).isRequired,
-    completada: PropTypes.bool.isRequired,
 };
 
 export default TaskCard;

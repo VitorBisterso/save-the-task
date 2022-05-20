@@ -6,7 +6,7 @@ const fetchAllTasks = () => dispatch => {
     dispatch(tasksActions.requestAction);
 
     axios
-        .get(`/tarefas`)
+        .get('/tarefas')
         .then(res => {
             dispatch(tasksActions.fetchAllTasksSuccessAction(res.data));
         })
@@ -15,4 +15,17 @@ const fetchAllTasks = () => dispatch => {
         });
 };
 
-export default { fetchAllTasks };
+const updateTask = task => dispatch => {
+    dispatch(tasksActions.requestAction);
+
+    axios
+        .put(`/tarefas/${task.id}`, task)
+        .then(() => {
+            dispatch(tasksActions.updateTaskAction(task));
+        })
+        .catch(() => {
+            dispatch(tasksActions.failedAction());
+        });
+};
+
+export default { fetchAllTasks, updateTask };

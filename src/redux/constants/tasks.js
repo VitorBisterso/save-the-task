@@ -3,6 +3,8 @@ const tasksActionsTypes = {
     TASKS_FAILED: 'TASKS_FAILED',
 
     FETCH_ALL_TASKS_SUCCESS: 'FETCH_ALL_TASKS_SUCCESS',
+
+    UPDATE_TASKS_SUCCESS: 'UPDATE_TASKS_SUCCESS',
 };
 
 export default tasksActionsTypes;

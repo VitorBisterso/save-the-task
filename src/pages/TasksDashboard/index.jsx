@@ -20,17 +20,7 @@ function TasksDashboard() {
         isLoading ? (
             <p>Carregando...</p>
         ) : (
-            tasks &&
-            tasks.map(task => (
-                <TaskCard
-                    key={task.id}
-                    titulo={task.titulo}
-                    descricao={task.descricao}
-                    prioridade={task.prioridade}
-                    categoria={task.categoria}
-                    completada={task.completada}
-                />
-            ))
+            tasks && tasks.map(task => <TaskCard key={task.id} tarefa={task} />)
         );
 
     return (

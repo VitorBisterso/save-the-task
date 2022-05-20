@@ -26,6 +26,17 @@ const tasksReducer = (state = initialState, action) => {
                 isLoading: false,
                 tasks: action.payload.tasks,
             };
+        case tasksActionsTypes.UPDATE_TASKS_SUCCESS: {
+            const { task } = action.payload;
+
+            const filteredTasks = state.tasks.filter(t => t.id !== task.id);
+
+            return {
+                ...state,
+                isLoading: false,
+                tasks: [...filteredTasks, task],
+            };
+        }
         default:
             return state;
     }

@@ -16,6 +16,15 @@ const tasksActions = {
             },
         };
     },
+
+    updateTaskAction: task => {
+        return {
+            type: tasksActionsTypes.UPDATE_TASKS_SUCCESS,
+            payload: {
+                task,
+            },
+        };
+    },
 };
 
 export default tasksActions;
