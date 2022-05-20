@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import TasksApi from '../../redux/api/tasks';
@@ -22,6 +23,7 @@ import {
 } from './styles';
 
 function TaskCard({ tarefa }) {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const { id, titulo, descricao, prioridade, categoria, completada } = tarefa;
@@ -66,7 +68,13 @@ function TaskCard({ tarefa }) {
                         img={deleteIcon}
                         width={18}
                     />
-                    <Icon onClick={() => undefined} img={editIcon} width={18} />
+                    <Icon
+                        onClick={() => {
+                            navigate(`/tarefas/${id}`);
+                        }}
+                        img={editIcon}
+                        width={18}
+                    />
                 </div>
                 {renderCompleteButton()}
             </Footer>
@@ -79,7 +87,8 @@ TaskCard.propTypes = {
         id: PropTypes.number.isRequired,
         titulo: PropTypes.string.isRequired,
         descricao: PropTypes.string.isRequired,
-        prioridade: PropTypes.string.isRequired,
+        prioridade: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+            .isRequired,
         categoria: PropTypes.shape({
             nome: PropTypes.string.isRequired,
             cor: PropTypes.string.isRequired,

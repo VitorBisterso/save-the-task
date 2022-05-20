@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import StyledInput from './styles';
+import StyledTextArea from './styles';
 
-function Input(props) {
-    const { name, value, hasError, onChange, onBlur, type } = props;
+function TextArea(props) {
+    const { name, value, hasError, onChange, onBlur } = props;
 
     const theme = hasError ? 'red' : '#8692a6';
 
     return (
-        <StyledInput
-            type={type}
+        <StyledTextArea
             name={name}
             value={value}
             theme={theme}
@@ -20,18 +19,16 @@ function Input(props) {
     );
 }
 
-Input.propTypes = {
+TextArea.propTypes = {
     name: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    value: PropTypes.string.isRequired,
     hasError: PropTypes.bool.isRequired,
     onChange: PropTypes.func.isRequired,
     onBlur: PropTypes.func,
-    type: PropTypes.string,
 };
 
-Input.defaultProps = {
+TextArea.defaultProps = {
     onBlur: () => undefined,
-    type: 'text',
 };
 
-export default Input;
+export default TextArea;

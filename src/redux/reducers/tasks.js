@@ -3,6 +3,7 @@ import tasksActionsTypes from '../constants/tasks';
 export const initialState = {
     isLoading: false,
     tasks: [],
+    selectedTask: {},
     hasError: false,
 };
 
@@ -48,6 +49,12 @@ const tasksReducer = (state = initialState, action) => {
                 tasks: newTasks,
             };
         }
+        case tasksActionsTypes.FETCH_TASK_BY_ID_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                selectedTask: action.payload.task,
+            };
         default:
             return state;
     }

@@ -34,6 +34,24 @@ const tasksActions = {
             },
         };
     },
+
+    createTaskAction: task => {
+        return {
+            type: tasksActionsTypes.CREATE_TASK_SUCCESS,
+            payload: {
+                task,
+            },
+        };
+    },
+
+    fetchTaskByIdSuccessAction: task => {
+        return {
+            type: tasksActionsTypes.FETCH_TASK_BY_ID_SUCCESS,
+            payload: {
+                task,
+            },
+        };
+    },
 };
 
 export default tasksActions;

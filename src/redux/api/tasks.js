@@ -41,4 +41,36 @@ const deleteTask = id => dispatch => {
         });
 };
 
-export default { fetchAllTasks, updateTask, deleteTask };
+const createTask = task => dispatch => {
+    dispatch(tasksActions.requestAction);
+
+    axios
+        .post(`/tarefas`, task)
+        .then(() => {
+            dispatch(tasksActions.createTaskAction(task));
+        })
+        .catch(() => {
+            dispatch(tasksActions.failedAction());
+        });
+};
+
+const fetchTaskById = id => dispatch => {
+    dispatch(tasksActions.requestAction);
+
+    axios
+        .get(`/tarefas/${id}`)
+        .then(res => {
+            dispatch(tasksActions.fetchTaskByIdSuccessAction(res.data));
+        })
+        .catch(() => {
+            dispatch(tasksActions.failedAction());
+        });
+};
+
+export default {
+    fetchAllTasks,
+    updateTask,
+    deleteTask,
+    createTask,
+    fetchTaskById,
+};

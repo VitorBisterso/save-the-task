@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import TasksApi from '../../redux/api/tasks';
 
@@ -9,6 +10,7 @@ import AddCardButton from '../../components/AddCardButton';
 import { Container } from './styles';
 
 function TasksDashboard() {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const { tasks, isLoading } = useSelector(state => state.tasksReducer);
 
@@ -26,7 +28,7 @@ function TasksDashboard() {
     return (
         <Container>
             {renderTasksList()}
-            <AddCardButton onClick={() => undefined} />
+            <AddCardButton onClick={() => navigate('/tarefas/criar')} />
         </Container>
     );
 }
