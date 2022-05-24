@@ -4,7 +4,7 @@
       "id": 1,
       "titulo": "Ir ao mercado da esquina comprar muitas coisas",
       "descricao": "Preciso comprar batatas, cenouras, refrigerante, sabão, tudo isso no mercadinho da esquina cujo dono é o Seu Bento. Ele mora aqui há 30 anos e eu acho que agora a descrição tá longa o suficiente pra precisar de reticências",
-      "prioridade": "5",
+      "prioridade": "3",
       "categoria": {
         "id": 1,
         "nome": "Casa",
@@ -34,7 +34,7 @@
       "id": 3,
       "titulo": "Estudar algoritmos",
       "descricao": "Prova pela frente :/",
-      "prioridade": "10",
+      "prioridade": "5",
       "categoria": {
         "id": 3,
         "nome": "Faculdade",
