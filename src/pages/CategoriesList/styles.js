@@ -15,6 +15,10 @@ export const Container = styled.div`
         grid-template-columns: repeat(2, 1fr);
         grid-row-gap: 1rem;
     }
+
+    @media (max-width: 350px) {
+        grid-template-columns: 1fr;
+    }
 `;
 
 export const CategoryCard = styled.div`

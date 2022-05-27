@@ -14,6 +14,11 @@ export const Row = styled.div`
     flex-direction: row;
     justify-content: space-evenly;
     margin-bottom: 3rem;
+
+    @media (max-width: 650px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const FormColumn = styled.div`

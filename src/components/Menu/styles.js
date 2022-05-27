@@ -25,6 +25,14 @@ export const Container = styled.div`
         margin-left: 15px;
         width: 32px;
     }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+
+        h1 {
+            text-align: center;
+        }
+    }
 `;
 
 export const Links = styled.div`
