@@ -1,13 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
 import CategoriesApi from '../../../redux/api/categories';
 
 import CategoriesForm from '..';
 
 function CategoriesCreateForm() {
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     return (
@@ -20,7 +18,6 @@ function CategoriesCreateForm() {
                         ...values,
                     })
                 );
-                navigate('/categorias');
             }}
         />
     );

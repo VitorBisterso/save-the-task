@@ -1,4 +1,5 @@
 import categoriesActions from '../actions/categories';
+import history from '../../history';
 
 import axios from './axios';
 
@@ -39,6 +40,7 @@ const updateCategory = category => dispatch => {
         .put(`/categorias/${category.id}`, category)
         .then(res => {
             dispatch(categoriesActions.updateCategoryAction(res.data));
+            history.push('/categorias');
         })
         .catch(() => {
             dispatch(categoriesActions.failedAction());
@@ -52,6 +54,7 @@ const createCategory = category => dispatch => {
         .post('/categorias', category)
         .then(res => {
             dispatch(categoriesActions.createCategoryAction(res.data));
+            history.push('/categorias');
         })
         .catch(() => {
             dispatch(categoriesActions.failedAction());

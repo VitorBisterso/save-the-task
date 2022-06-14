@@ -1,4 +1,5 @@
 import tasksActions from '../actions/tasks';
+import history from '../../history';
 
 import axios from './axios';
 
@@ -22,6 +23,7 @@ const updateTask = task => dispatch => {
         .put(`/tarefas/${task.id}`, task)
         .then(() => {
             dispatch(tasksActions.updateTaskAction(task));
+            history.push('/');
         })
         .catch(() => {
             dispatch(tasksActions.failedAction());
@@ -48,6 +50,7 @@ const createTask = task => dispatch => {
         .post(`/tarefas`, task)
         .then(() => {
             dispatch(tasksActions.createTaskAction(task));
+            history.push('/');
         })
         .catch(() => {
             dispatch(tasksActions.failedAction());

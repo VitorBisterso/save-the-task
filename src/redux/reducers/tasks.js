@@ -25,7 +25,7 @@ const tasksReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                tasks: action.payload.tasks,
+                tasks: [...action.payload.tasks],
             };
         case tasksActionsTypes.UPDATE_TASK_SUCCESS: {
             const { task } = action.payload;
@@ -35,7 +35,7 @@ const tasksReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                tasks: [...filteredTasks, task],
+                tasks: [...filteredTasks, { ...task }],
             };
         }
         case tasksActionsTypes.DELETE_TASK_SUCCESS: {
@@ -46,14 +46,14 @@ const tasksReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                tasks: newTasks,
+                tasks: [...newTasks],
             };
         }
         case tasksActionsTypes.FETCH_TASK_BY_ID_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
-                selectedTask: action.payload.task,
+                selectedTask: { ...action.payload.task },
             };
         default:
             return state;

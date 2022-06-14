@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import CategoriesApi from '../../../redux/api/categories';
 
@@ -8,8 +8,6 @@ import CategoriesForm from '..';
 
 function CategoriesEditForm() {
     const { id: categoryId } = useParams();
-
-    const navigate = useNavigate();
 
     const dispatch = useDispatch();
     const { selectedCategory } = useSelector(state => state.categoriesReducer);
@@ -47,7 +45,6 @@ function CategoriesEditForm() {
                             ...values,
                         })
                     );
-                    navigate('/categorias');
                 }}
             />
         )

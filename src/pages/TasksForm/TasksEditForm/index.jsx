@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import TasksApi from '../../../redux/api/tasks';
 
@@ -8,8 +8,6 @@ import TasksForm from '..';
 
 function TasksEditForm() {
     const { id: categoryId } = useParams();
-
-    const navigate = useNavigate();
 
     const dispatch = useDispatch();
     const { selectedTask } = useSelector(state => state.tasksReducer);
@@ -47,7 +45,6 @@ function TasksEditForm() {
                             ...values,
                         })
                     );
-                    navigate('/');
                 }}
             />
         )

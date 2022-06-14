@@ -26,13 +26,13 @@ const categoriesReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                categories: action.payload.categories,
+                categories: [...action.payload.categories],
             };
         case categoriesActionsTypes.FETCH_CATEGORY_BY_ID_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
-                selectedCategory: action.payload.category,
+                selectedCategory: { ...action.payload.category },
             };
         case categoriesActionsTypes.UPDATE_CATEGORY_SUCCESS:
             return {
@@ -50,7 +50,7 @@ const categoriesReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                categories: newCategories,
+                categories: [...newCategories],
             };
         }
         default:
