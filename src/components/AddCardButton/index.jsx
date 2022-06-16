@@ -27,7 +27,7 @@ AddCardButton.propTypes = {
 
 AddCardButton.defaultProps = {
     width: 300,
-    height: 200,
+    height: 250,
     iconSize: 48,
 };
 

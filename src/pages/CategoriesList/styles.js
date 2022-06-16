@@ -1,10 +1,20 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 0 2.5rem;
+
+    & > label {
+        max-width: 150px;
+    }
+`;
+
+export const ListContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-row-gap: 3rem;
-    justify-items: center;
+    margin-top: 2rem;
 
     @media (max-width: 768px) {
         grid-template-columns: repeat(3, 1fr);
@@ -29,7 +39,7 @@ export const CategoryCard = styled.div`
     border: 1px solid var(--COLOR-BLACK);
     border-radius: 5px;
     padding: 0 10px;
-    width: 175px;
+    width: 200px;
     cursor: pointer;
     transition: all 0.2s linear;
 

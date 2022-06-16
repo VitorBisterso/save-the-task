@@ -8,91 +8,19 @@
       "categoria": {
         "id": 1,
         "nome": "Casa",
-        "cor": "#00ff00"
+        "cor": "#00ff00",
+        "ativa": true
       },
       "completada": false,
-      "dono": "vitor.bisterso",
-      "participantes": []
-    },
-    {
-      "id": 2,
-      "titulo": "Dar banho no cachorro",
-      "descricao": "Tá muito sujo!!!",
-      "prioridade": "2",
-      "categoria": {
-        "id": 2,
-        "nome": "Pet",
-        "cor": "#0000ff"
-      },
-      "completada": true,
-      "dono": "vitor.bisterso",
-      "participantes": [
-        "abel.ferreira"
-      ]
-    },
-    {
-      "id": 3,
-      "titulo": "Estudar algoritmos",
-      "descricao": "Prova pela frente :/",
-      "prioridade": "5",
-      "categoria": {
-        "id": 3,
-        "nome": "Faculdade",
-        "cor": "#ff0000"
-      },
-      "completada": false,
-      "dono": "vitor.bisterso",
-      "participantes": [
-        "abel.ferreira",
-        "rogerio.ceni"
-      ]
+      "dataLimite": "01/01/2050"
     }
   ],
   "categorias": [
     {
       "id": 1,
       "nome": "Casa",
-      "cor": "#04cd04"
-    },
-    {
-      "id": 2,
-      "nome": "Pet",
-      "cor": "#0000ff"
-    },
-    {
-      "id": 3,
-      "nome": "Faculdade",
-      "cor": "#c8b7b7"
-    },
-    {
-      "id": 4,
-      "nome": "Outros",
-      "cor": "#ff00ff"
-    },
-    {
-      "id": 5,
-      "nome": "Escola",
-      "cor": "#ffff00"
-    },
-    {
-      "id": 6,
-      "nome": "Amigos",
-      "cor": "#000000"
-    },
-    {
-      "id": 7,
-      "nome": "Internas",
-      "cor": "#452e03"
-    },
-    {
-      "id": 8,
-      "nome": "Externas",
-      "cor": "#ffae00"
-    },
-    {
-      "id": 9,
-      "nome": "Mais outra com nome gigante aqui",
-      "cor": "#ae0000"
+      "cor": "#00ff00",
+      "ativa": true
     }
   ]
 }

@@ -74,10 +74,14 @@ function TaskCard({ tarefa }) {
         <Container isCategoryActive={categoria.ativa}>
             <Header>
                 <ColoredDot color={cor} />
-                <Title isCompleted={completada}>{titulo}</Title>
+                <Title isCompleted={completada} title={titulo}>
+                    {titulo}
+                </Title>
                 <p>{prioridade}</p>
             </Header>
-            <Description isCompleted={completada}>{descricao}</Description>
+            <Description isCompleted={completada} title={descricao}>
+                {descricao}
+            </Description>
             {renderDeadline()}
             <Footer>
                 <div>
