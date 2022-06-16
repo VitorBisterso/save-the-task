@@ -47,3 +47,7 @@ export const CategoryCard = styled.div`
         margin-left: 5px;
     }
 `;
+
+export const Name = styled.p`
+    text-decoration: ${props => (!props.isActive ? 'line-through' : 'initial')};
+`;

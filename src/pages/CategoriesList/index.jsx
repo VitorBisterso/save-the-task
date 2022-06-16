@@ -10,7 +10,7 @@ import Icon from '../../components/Icon';
 
 import deleteIcon from '../../assets/img/delete.png';
 
-import { Container, CategoryCard } from './styles';
+import { Container, CategoryCard, Name } from './styles';
 
 function CategoriesList() {
     const navigate = useNavigate();
@@ -38,7 +38,7 @@ function CategoriesList() {
                     }
                 >
                     <ColoredDot color={category.cor} />
-                    <p>{category.nome}</p>
+                    <Name isActive={category.ativa}>{category.nome}</Name>
                     <Icon
                         onClick={() =>
                             dispatch(CategoriesApi.deleteCategory(category.id))

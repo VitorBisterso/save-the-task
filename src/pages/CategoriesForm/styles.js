@@ -24,3 +24,14 @@ export const SelectColor = styled.input`
     background-color: transparent;
     margin-top: 0.5rem;
 `;
+
+export const Row = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+
+    label:last-child {
+        margin-top: 20px;
+    }
+`;

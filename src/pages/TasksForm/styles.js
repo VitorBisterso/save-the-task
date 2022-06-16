@@ -7,6 +7,11 @@ export const Container = styled.form`
     & > label:first-child {
         text-align: center;
     }
+
+    button {
+        margin: auto;
+        width: 50%;
+    }
 `;
 
 export const Row = styled.div`
@@ -26,10 +31,6 @@ export const FormColumn = styled.div`
     flex-direction: column;
     min-width: 300px;
     max-width: 30%;
-
-    button {
-        margin-top: 1.5rem;
-    }
 `;
 
 export const FormField = styled.div`

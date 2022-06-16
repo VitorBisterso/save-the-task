@@ -20,6 +20,9 @@ export const getValidationSchema = () =>
             .min(1, 'O valor mínimo da prioridade é 1')
             .max(5, 'O valor máximo da prioridade é 5')
             .required(requiredFieldMessage),
+        dataLimite: Yup.date()
+            .required(requiredFieldMessage)
+            .min(new Date(), 'A data de conclusão estar no futuro'),
         categoria: Yup.string().required(requiredFieldMessage),
         completada: Yup.boolean().required(requiredFieldMessage),
     });

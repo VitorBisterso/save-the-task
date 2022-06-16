@@ -5,7 +5,11 @@ export const Container = styled.div`
     flex: 1;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid var(--COLOR-BLACK);
+    border: 1px solid
+        ${props =>
+            props.isCategoryActive
+                ? 'var(--COLOR-BLACK)'
+                : 'var(--COLOR-PINK)'};
     border-radius: 10px;
     padding: 5px 10px;
     width: var(--CARD-WIDTH);

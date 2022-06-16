@@ -13,4 +13,5 @@ export const getValidationSchema = () =>
     Yup.object({
         nome: getDefaultYupStringObject(2, 30),
         cor: Yup.string().required(requiredFieldMessage),
+        ativa: Yup.boolean().required(requiredFieldMessage),
     });

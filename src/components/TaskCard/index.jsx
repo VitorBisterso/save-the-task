@@ -26,7 +26,15 @@ function TaskCard({ tarefa }) {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const { id, titulo, descricao, prioridade, categoria, completada } = tarefa;
+    const {
+        id,
+        titulo,
+        descricao,
+        prioridade,
+        categoria,
+        dataLimite,
+        completada,
+    } = tarefa;
     const { cor } = categoria;
 
     const renderCompleteButton = () => {
@@ -51,14 +59,26 @@ function TaskCard({ tarefa }) {
         );
     };
 
+    const renderDeadline = () =>
+        completada ? (
+            <p>
+                <b>Concluída</b>
+            </p>
+        ) : (
+            <p>
+                Concluir até: <b>{dataLimite}</b>
+            </p>
+        );
+
     return (
-        <Container>
+        <Container isCategoryActive={categoria.ativa}>
             <Header>
                 <ColoredDot color={cor} />
                 <Title isCompleted={completada}>{titulo}</Title>
                 <p>{prioridade}</p>
             </Header>
             <Description isCompleted={completada}>{descricao}</Description>
+            {renderDeadline()}
             <Footer>
                 <div>
                     <Icon
@@ -89,9 +109,11 @@ TaskCard.propTypes = {
         descricao: PropTypes.string.isRequired,
         prioridade: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
             .isRequired,
+        dataLimite: PropTypes.string.isRequired,
         categoria: PropTypes.shape({
             nome: PropTypes.string.isRequired,
             cor: PropTypes.string.isRequired,
+            ativa: PropTypes.bool.isRequired,
         }).isRequired,
         completada: PropTypes.bool.isRequired,
     }).isRequired,

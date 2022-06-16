@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import CategoriesApi from '../../redux/api/categories';
 
+import Utils from '../../utils';
+
 import { getValidationSchema } from './formikData';
 
 import Label from '../../components/Label';
@@ -12,9 +14,9 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 import TextArea from '../../components/TextArea';
 import CheckBox from '../../components/CheckBox';
+import Select from '../../components/Select';
 
 import { Container, Row, FormColumn, FormField } from './styles';
-import Select from '../../components/Select';
 
 function TasksForm({ task, onFormSubmit, pageTitle }) {
     const dispatch = useDispatch();
@@ -41,12 +43,14 @@ function TasksForm({ task, onFormSubmit, pageTitle }) {
             descricao: task.descricao || '',
             prioridade: task.prioridade || '',
             categoria: (task.categoria && task.categoria.nome) || '',
+            dataLimite: Utils.getDateYYYYMMDD(task.dataLimite),
             completada: task.completada || false,
         },
         validationSchema: getValidationSchema(),
         onSubmit: () => {
             onFormSubmit({
                 ...formik.values,
+                dataLimite: Utils.getDateDDMMYYYY(formik.values.dataLimite),
                 categoria: getCategoryByName(formik.values.categoria),
             });
         },
@@ -136,6 +140,27 @@ function TasksForm({ task, onFormSubmit, pageTitle }) {
                         )}
                     </FormField>
                     <FormField>
+                        <Label text="Concluir até" />
+                        <Input
+                            name="dataLimite"
+                            value={formik.values.dataLimite}
+                            hasError={Boolean(
+                                formik.touched.dataLimite &&
+                                    formik.errors.dataLimite
+                            )}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            type="date"
+                        />
+                        {formik.touched.dataLimite &&
+                            formik.errors.dataLimite && (
+                                <Label
+                                    text={formik.errors.dataLimite}
+                                    color="red"
+                                />
+                            )}
+                    </FormField>
+                    <FormField>
                         <CheckBox
                             name="completada"
                             label="Completada"
@@ -143,13 +168,9 @@ function TasksForm({ task, onFormSubmit, pageTitle }) {
                             onChange={formik.handleChange}
                         />
                     </FormField>
-                    <Button
-                        text="Salvar"
-                        onClick={formik.handleSubmit}
-                        submit
-                    />
                 </FormColumn>
             </Row>
+            <Button text="Salvar" onClick={formik.handleSubmit} submit />
         </Container>
     );
 }
@@ -159,9 +180,11 @@ TasksForm.propTypes = {
         titulo: PropTypes.string,
         descricao: PropTypes.string,
         prioridade: PropTypes.number,
+        dataLimite: PropTypes.string,
         categoria: PropTypes.shape({
             nome: PropTypes.string,
             cor: PropTypes.string,
+            ativa: PropTypes.bool,
         }),
         completada: PropTypes.bool,
     }),
